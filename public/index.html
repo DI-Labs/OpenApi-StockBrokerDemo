@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Insight open API</title>
+
+    <!-- Bootstrap -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+          crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="main.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="icon" href="http://www.digitalinsight.com/favicon.ico" type="image/x-icon" />
+</head>
+<body >
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">NCR Stock trade</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#" data-toggle="modal" data-target="#linkAccountModal">Account</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="header container">
+        <h2>Welcome to the NCR stock exchange!</h2>
+        <p>Here you can simulate purchasing various stocks. By default, an order can be placed even if the order is
+        greater than the available balance in the funding account. To demonstrate what is possible with the Open APIs,
+        you can link a First Digital demo account through the "Account" tab. Once an account is linked, the NCR stock
+        exchange can look your balance before completing the order and can warn you if you do not have enough
+        funds in your account.</p>
+    </header>
+
+    <hr>
+
+    <!-- Title -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Largest Stocks by Market Cap</h3>
+        </div>
+    </div>
+    <br />
+    <!-- /.row -->
+
+    <!-- Page Features -->
+    <div class="row text-center">
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Acme</h3>
+                    <hr />
+                    <div class="stock-details">
+                        <div class="row">
+                            <p class="col-xs-7 key">Sector:</p><p class="col-xs-5">Technology</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">Last:</p><p class="col-xs-5">113.75</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">5 Day Change:</p><p class="col-xs-5">5.12%</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">52 Week Change:</p><p class="col-xs-5">0.11%</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">Market Cap:</p><p class="col-xs-5">612.0B</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div>
+                        <button type="button" class="btn btn-primary buy-button" data-toggle="modal" data-target="#buyModal" data-stock="acme">Buy now</button>
+                        <a href="#" class="btn btn-default">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Glob</h3>
+                    <hr />
+                    <div class="stock-details">
+                        <div class="row">
+                            <p class="col-xs-7 key">Sector:</p><p class="col-xs-5">Technology</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">Last:</p><p class="col-xs-5">56.81</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">5 Day Change:</p><p class="col-xs-5">0.50%</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">52 Week Change:</p><p class="col-xs-5">30.66%</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">Market Cap:</p><p class="col-xs-5">442.7B</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div>
+                        <button type="button" class="btn btn-primary buy-button" data-toggle="modal" data-target="#buyModal" data-stock="glob">Buy now</button>
+                        <a href="#" class="btn btn-default">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Init</h3>
+                    <hr />
+                    <div class="stock-details">
+                        <div class="row">
+                            <p class="col-xs-7 key">Sector:</p><p class="col-xs-5">Consumer</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">Last:</p><p class="col-xs-5">780.22</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">5 Day Change:</p><p class="col-xs-5">2.52%</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">52 Week Change:</p><p class="col-xs-5">44.42%</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">Market Cap:</p><p class="col-xs-5">369.9B</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div>
+                        <button type="button" class="btn btn-primary buy-button" data-toggle="modal" data-target="#buyModal" data-stock="init">Buy now</button>
+                        <a href="#" class="btn btn-default">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h3>Umbr</h3>
+                    <hr />
+                    <div class="stock-details">
+                        <div class="row">
+                            <p class="col-xs-7 key">Sector:</p><p class="col-xs-5">Technology</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">Last:</p><p class="col-xs-5">128.64</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">5 Day Change:</p><p class="col-xs-5">1.12%</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">52 Week Change:</p><p class="col-xs-5">36.27%</p>
+                        </div>
+                        <div class="row">
+                            <p class="col-xs-7 key">Market Cap:</p><p class="col-xs-5">369.4B</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div>
+                        <button type="button" class="btn btn-primary buy-button" data-toggle="modal" data-target="#buyModal" data-stock="umbr">Buy now</button>
+                        <a href="#" class="btn btn-default">More Info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; NCR 2016</p>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- /.container -->
+
+
+<!-- Modal -->
+<div id="buyModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="buyModalTitle">Modal Header</h4>
+            </div>
+            <div class="modal-body ncr-modal-body">
+                <div id="buyLoader" class="ncr-loader"></div>
+                <div id="initialBuyForm">
+                    <p>Current stock price: $<span id="modalStockPrice"></span></p>
+                    <div class="form-group">
+                        <label for="quantityInput">Quantity:</label>
+                        <input type="text" class="form-control" id="quantityInput">
+                    </div>
+                    <hr />
+                    <p class="modal-total-price">Total: $<span id="modalTotalPrice"></span></p>
+                </div>
+                <div id="confirmTrade">
+                    <div class="error">
+                        You have insufficient funds
+                    </div>
+                    <p>
+                        You do not have enough funds in your checking account to cover this trade.
+                        If you proceed, you may overdraft and be charged fees by your financial institution.
+                    </p>
+                    <p>
+                        Are you sure you want to proceed with this trade?
+                    </p>
+                </div>
+                <div id="successTrade">
+                    <h3>Success</h3>
+                    <p id="tradeSuccessStatus"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="buyConfirmButton" class="btn btn-primary">Confirm</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="linkAccountModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Link your First Digital account</h4>
+            </div>
+            <div class="modal-body ncr-modal-body">
+                <div id="loginError" class="error">
+                    Invalid username or password
+                </div>
+                <div id="loginForm">
+                    <div class="form-group">
+                        <label for="usernameInput">Username:</label>
+                        <input type="text" class="form-control" id="usernameInput" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordInput">Password:</label>
+                        <input type="password" class="form-control" id="passwordInput" value="">
+                    </div>
+                </div>
+                <div id="loginLoader" class="ncr-loader"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="linkAccountButton" class="btn btn-primary">Link Account</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<!-- Custom scripts -->
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+@import url('//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.header {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 6px;
+    background-color: #eee;
+}
+
+@media(min-width:48em){
+    .header {
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.stock-details {
+    text-align: left;
+}
+
+.stock-details .key {
+    font-weight: bold;
+}
+
+.modal-total-price {
+    font-weight: bold;
+}
+
+.ncr-modal-body {
+    /*height: 250px;*/
+}
+
+.ncr-loader {
+    height: 100px;
+    width: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-image: url('images/ring.gif');
+    background-size: cover;
+}
+
+#loginLoader {
+    display: none;
+}
+
+.error {
+    padding:10px;
+    margin:10px 0;
+}
+.error:before {
+    font-family:FontAwesome;
+    content:'\f057';
+    font-style:normal;
+    font-weight:400;
+    speak:none;
+    display:inline-block;
+    text-decoration:inherit;
+    width:1em;
+    margin-right:.2em;
+    text-align:center;
+    font-variant:normal;
+    text-transform:none;
+    line-height:1em;
+    margin-left:.2em;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale
+}
+
+.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
